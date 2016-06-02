@@ -100,6 +100,7 @@ catkin_package(
 include_directories(
   ${catkin_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
+  ${Eigen_INCLUDE_DIRS}
 )
 
 ## Declare a cpp library
@@ -116,6 +117,8 @@ include_directories(
  add_executable(circle1 src/circle1.cpp)
  add_executable(circle_pose src/circle_pose.cpp)
  add_executable(corner src/corner.cpp)
+ add_executable(wrenches src/wrenches.cpp)
+
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(detect_node detect_generate_messages_cpp)
@@ -152,6 +155,11 @@ include_directories(
    target_link_libraries(corner
    ${catkin_LIBRARIES}
    ${OpenCV_LIBRARIES}
+)
+   target_link_libraries(wrenches
+   ${catkin_LIBRARIES}
+   ${OpenCV_LIBRARIES}
+   ${Eigen_INCLUDE_DIRS}
 )
 #############
 ## Install ##
