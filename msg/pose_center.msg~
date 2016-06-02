@@ -1,0 +1,3 @@
+int16 translate_x
+int16 translate_y
+int16 translate_z
